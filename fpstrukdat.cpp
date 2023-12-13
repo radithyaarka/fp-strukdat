@@ -32,7 +32,6 @@ public:
     virtual void display() const = 0;
 };
 
-// Concrete Class FlightGraphAdjacencyMatrix implementing Graph
 class FlightGraphAdjacencyMatrix : public FlightGraph
 {
 public:
@@ -182,7 +181,6 @@ void flightRoute::printDeletedRoute(int node1Index, int node2Index)
     printRouteHeader();
 }
 
-// Implement the findNodeIndex function
 int flightRoute::findNodeIndex(const string &nodeName)
 {
     string lowerNodeName = nodeName;
@@ -317,7 +315,6 @@ void flightRoute::dfsAllRoutes(int currentNode, int targetNode, vector<int> &vis
 
     if (currentNode == targetNode)
     {
-        // Print the current route
         cout << "Route: ";
         for (int i = 0; i < path.size(); ++i)
         {
@@ -340,7 +337,6 @@ void flightRoute::dfsAllRoutes(int currentNode, int targetNode, vector<int> &vis
         }
     }
 
-    // Backtrack
     visited[currentNode] = false;
     path.pop_back();
 }
@@ -397,7 +393,7 @@ int main()
         cout << "Enter your choice: ";
         cin >> choice;
 
-        cin.ignore(); // Ignore the newline character in the input buffer
+        cin.ignore();
 
         switch (choice)
         {
